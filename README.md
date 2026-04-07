@@ -317,3 +317,7 @@ Dalam proses implementasi dan pengujian, terdapat beberapa kendala teknis yang b
 4.  **MyDFIR.** *Detection Engineering with Wazuh: Building Custom Rules*. [https://www.youtube.com/watch?v=nSOqU1iX5oQ](https://www.youtube.com/watch?v=nSOqU1iX5oQ)
 5.  **Catur Nurrochman.** *Wazuh Series - 4. Fitur File Integrity Monitoring (FIM)*. [https://www.youtube.com/watch?v=78-Fq0iaA2Q](https://www.youtube.com/watch?v=78-Fq0iaA2Q)
 6.  **MITRE ATT\&CK Framework.** *Technique T1059.004: Command and Scripting Interpreter: Unix Shell*. [https://attack.mitre.org/techniques/T1059/004/](https://attack.mitre.org/techniques/T1059/004/)
+
+### C. Topologi Wazuh
+1. **Wazuh Documentation.** *Architecture - Getting Started*. [https://documentation.wazuh.com/current/getting-started/architecture.html](https://documentation.wazuh.com/current/getting-started/architecture.html)
+2. **Wazuh Documentation.** *Components - Getting Started*. [https://documentation.wazuh.com/current/getting-started/components/index.html](https://documentation.wazuh.com/current/getting-started/components/index.html)
