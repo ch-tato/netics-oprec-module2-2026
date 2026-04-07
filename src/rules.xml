@@ -1,0 +1,70 @@
+<group name="local, syslog, sshd,">
+    <rule id="100001" level="10">
+        <if_sid>5402</if_sid>
+        <match>COMMAND=/usr/bin/su</match>
+        <description>NETICS: Privilege Escalation (sudo su) detected</description>
+    </rule>
+
+    <rule id="100002" level="8">
+        <if_sid>5902</if_sid>
+        <description>NETICS: New user account created in the system</description>
+    </rule>
+
+    <rule id="100003" level="12">
+        <if_sid>5402</if_sid>
+        <match>nmap</match>
+        <description>NETICS: Network scanning tool (nmap) detected</description>
+    </rule>
+
+    <rule id="100004" level="12" frequency="4" timeframe="60">
+        <if_matched_sid>5760</if_matched_sid>
+        <same_source_ip />
+        <description>NETICS: Multiple failed login attempts from the same source IP address</description>
+    </rule>
+
+    <rule id="100005" level="12">
+        <if_sid>550</if_sid>
+        <match>/etc/passwd</match>
+        <description>NETICS: User account information modified</description>
+    </rule>
+
+    <rule id="100006" level="10">
+        <if_sid>5402</if_sid>
+        <match>chmod 777</match>
+        <description>NETICS: File permission modified (chmod 777) detected. Highly suspicious activity.</description>
+    </rule>
+
+    <rule id="100007" level="12">
+        <if_sid>5402</if_sid>
+        <match>visudo</match>
+        <description>NETICS: Editing sudo configuration file (visudo) detected. Someone is trying to escalate privileges.</description>
+    </rule>
+
+    <rule id="100008" level="10">
+        <if_sid>5402</if_sid>
+        <match>crontab -e</match>
+        <description>NETICS: Editing crontab file (crontab -e) detected. Backdoor is potentially installed.</description>
+    </rule>
+
+    <rule id="100009" level="12">
+        <if_sid>5402</if_sid>
+        <match>rm /var/log</match>
+        <description>NETICS: Log file deleted. Defense evasion detected.</description>
+    </rule>
+
+    <rule id="100010" level="14">
+        <if_sid>5402</if_sid>
+        <match>nc -e /bin/bash</match>
+        <description>NETICS: Reverse shell established. Critical activity detected.</description>
+    </rule>
+
+    <rule id="100011" level="13">
+        <if_sid>5402</if_sid>
+        <match>curl|wget</match>
+        <match>bash|sh</match>
+        <description>NETICS: Suspicious file download and execution detected.</description>
+        <mitre>
+            <id>T1059.004</id>
+        </mitre>
+    </rule>
+</group>
