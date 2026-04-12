@@ -30,7 +30,7 @@
 
     <rule id="100006" level="10">
         <if_sid>5402</if_sid>
-        <match>chmod 777</match>
+        <regex type="pcre2">chmod.*777</regex>
         <description>NETICS: File permission modified (chmod 777) detected. Highly suspicious activity.</description>
     </rule>
 
@@ -60,8 +60,7 @@
 
     <rule id="100011" level="13">
         <if_sid>5402</if_sid>
-        <match>curl|wget</match>
-        <match>bash|sh</match>
+        <regex type="pcre2">(curl|wget).*(bash|sh)</regex>
         <description>NETICS: Suspicious file download and execution detected.</description>
         <mitre>
             <id>T1059.004</id>
